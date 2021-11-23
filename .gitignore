@@ -8,4 +8,3 @@ target
 *.iml
 .parcel-cache
 *.tgz
-*.d.ts

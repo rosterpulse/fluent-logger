@@ -1,6 +1,6 @@
 {
   "name": "@rosterpulse/fluent-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rosterpulse/fluent-logger.git"
@@ -13,6 +13,7 @@
   "source": "src/index.ts",
   "main": "dist/main.js",
   "types": "dist/types.d.ts",
+  "module": "dist/module.js",
   "targets": {
     "main": {
       "optimize": true,
