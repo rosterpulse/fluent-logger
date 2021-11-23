@@ -1,1 +1,1 @@
-export { IFluentLogger, FluentLogger } from './fluent-logger';
+export * from './fluent-logger';
