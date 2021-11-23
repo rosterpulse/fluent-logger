@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+lib
+build
+dist
+target
+.idea
+*.iml
+.parcel-cache
+*.tgz
+src/
+*.js
+tsconfig.json
+*.yaml
