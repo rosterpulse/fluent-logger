@@ -1,6 +1,14 @@
 {
   "name": "@rosterpulse/fluent-logger",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosterpulse/fluent-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rosterpulse/fluent-logger/issues"
+  },
+  "homepage": "https://github.com/rosterpulse/fluent-logger#readme",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/main.js",
