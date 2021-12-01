@@ -76,7 +76,7 @@ const withLevel = (baseLevel: string) => (transport: LoggerTransport) => {
   };
 };
 
-const createLogger = (loggerParams: LoggerParams, opts?: LoggerOpts): IFluentLogger => {
+const createLogger = (loggerParams: LoggerParams, opts: LoggerOpts = {}): IFluentLogger => {
   const baseFormatter = createBaseFormatter({
     schemaMapper: basic,
   });
@@ -85,16 +85,19 @@ const createLogger = (loggerParams: LoggerParams, opts?: LoggerOpts): IFluentLog
     ? opts.level
     : 'silly';
 
-  const transports = (opts?.transports || [])
-    .concat({ type: 'console' })
-    .map(withFormat())
-    .map(withLevel(level));
+  const { transports = [] } = opts;
+
+  const loggerTransports = transports.some((transport) => transport.type === 'console')
+    ? transports
+    : transports.concat({ type: 'console' });
 
   const logger = createWinstonLogger({
     baseFormatter,
     levels,
     level,
-    transports,
+    transports: loggerTransports
+      .map(withFormat())
+      .map(withLevel(level)),
   })
 
   return FluentLogger.create(logger, loggerParams);
