@@ -100,4 +100,9 @@ const createLogger = (loggerParams: LoggerParams, opts?: LoggerOpts): IFluentLog
   return FluentLogger.create(logger, loggerParams);
 };
 
-export { createLogger };
+const formatters = {
+  cli: createCliFormatter({ colors }).format,
+  json: createJsonFormatter().format,
+};
+
+export { createLogger, formatters };
